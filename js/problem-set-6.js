@@ -40,7 +40,22 @@ div.strokeText('Hello world',10,50);
  */
 
 function drawRectangle() {
+  let height;
+  let width;
+if (height > 1 || width > 1 ){
+ height = prompt("enter a Height");
+ width = prompt("enter a width");
+}
+let x;
+let y;
 
+if( x > 5 || y > 5) {
+   x = Number(prompt("enter X position"));
+ y = Number(prompt("enter X position"));
+}
+var div = document.getElementById('canvas2').getContext('2d');
+div.fillstyke = 'black';
+div.fillRect(x, y, height, width);
 }
 
 /*
