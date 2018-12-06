@@ -93,12 +93,17 @@ function drawColoredRectangle() {
 var div = document.getElementById('canvas3').getContext('2d');
 let color;
 color = prompt("what color do you want?");
-if (color == "blue" || "blue" || "green" || "orange" || "purple" || "red" || "yellow"){
-  div.fillStyle = color
-} 
 
-div.fillRect( 10, 10, 100, 50);
+if (color === "blue" || "black" || "green" || "orange" || "purple" || "red" || "yellow" ){
+  div.fillStyle = color
+  div.fillRect( 10, 10, 100, 50);
 }
+else {
+  alert(`${color} isnt supported`)
+}
+
+}
+
 
 /*
  * Triangle. 5 points.
