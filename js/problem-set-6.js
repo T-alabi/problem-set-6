@@ -90,7 +90,8 @@ div.strokeRect( x, y, height, width);
  */
 
 function drawColoredRectangle() {
-
+var div = document.getElementById('canvas3').getContext('2d');
+div.fillRect()
 }
 
 /*
