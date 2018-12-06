@@ -133,6 +133,7 @@ else {
  */
 
 function drawTriangle() {
+var div = document.getElementById("canvas4").getContext("2d");
 
 }
 
