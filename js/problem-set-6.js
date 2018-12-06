@@ -91,7 +91,13 @@ div.strokeRect( x, y, height, width);
 
 function drawColoredRectangle() {
 var div = document.getElementById('canvas3').getContext('2d');
-div.fillRect()
+let color;
+color = prompt("what color do you want?");
+if (color == "blue" || "blue" || "green" || "orange" || "purple" || "red" || "yellow"){
+  div.fillStyle = color
+} 
+
+div.fillRect( 10, 10, 100, 50);
 }
 
 /*
