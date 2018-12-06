@@ -42,20 +42,26 @@ div.strokeText('Hello world',10,50);
 function drawRectangle() {
   let height;
   let width;
-if (height > 1 || width > 1 ){
- height = prompt("enter a Height");
- width = prompt("enter a width");
+  let x;
+  let y;
+ height = Number(prompt("enter a Height"));
+ if( height < 1){
+   height = Number(prompt("enter a Height above 0"))
+ }
+ width = Number(prompt("enter a width"));
+ if( width < 1 ){
+   height = Number(prompt("enter a width above 0"))
+ }
+x = Number(prompt("enter X position"));
+if( x < 5 ){
+  height = Number(prompt("enter a X above 4"))
 }
-let x;
-let y;
-
-if( x > 5 || y > 5) {
-   x = Number(prompt("enter X position"));
- y = Number(prompt("enter X position"));
-}
+ y = Number(prompt("enter Y position"));
+ if( y < 5 ){
+   height = Number(prompt("enter a y above 4"))
+ }
 var div = document.getElementById('canvas2').getContext('2d');
-div.fillstyke = 'black';
-div.fillRect(x, y, height, width);
+div.strokeRect( x, y, height, width);
 }
 
 /*
