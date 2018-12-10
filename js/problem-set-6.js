@@ -133,6 +133,7 @@ else {
  */
 
 function drawTriangle() {
+
 var div = document.getElementById("canvas4").getContext("2d");
 
 }
@@ -157,7 +158,11 @@ var div = document.getElementById("canvas4").getContext("2d");
  */
 
 function drawSmileyFace() {
-
+ var div = document. getElementById("canvas5").getContext("2d");
+ div.beginPath();
+ let radius =  Number(prompt("What do you want the radius to be?"));
+ div.arc(250, 250, radius, 0, 2 * Math.PI);
+ div.stroke();
 }
 
 /*
