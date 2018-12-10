@@ -163,7 +163,7 @@ function drawSmileyFace() {
  div.beginPath();
   let radius;
   radius =  Number(prompt("What do you want the radius to be?"));
- div.arc(250, 250, radius, 0, 2 * Math.PI);
+ div.arc(250, 250, radius, 0, Math.PI * 2);
  //the mouth
  let smile = radius * 0.7
  div.moveTo(265, 265);
@@ -171,10 +171,10 @@ function drawSmileyFace() {
  //left eye
  let eye =  radius * 0.1
  div.moveTo(175, 175);
- div.arc(175, 175, eye, 0, 2 * Math.PI);
+ div.arc(175, 175, eye, 0, Math.PI * 2);
 //right eye
 div.moveTo(375, 175);
-div.arc(375, 175, eye, 0, 2 * Math.PI);
+div.arc(375, 175, eye, 0, Math.PI * 2);
  div.stroke();
 }
 
