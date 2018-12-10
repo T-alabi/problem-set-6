@@ -168,6 +168,13 @@ function drawSmileyFace() {
  let smile = radius * 0.7
  div.moveTo(265, 265);
  div.arc(265, 265, smile, 0, Math.PI);
+ //left eye
+ let eye =  radius * 0.1
+ div.moveTo(175, 175);
+ div.arc(175, 175, eye, 0, 2 * Math.PI);
+//right eye
+div.moveTo(375, 175);
+div.arc(375, 175, eye, 0, 2 * Math.PI);
  div.stroke();
 }
 
