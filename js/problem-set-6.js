@@ -158,18 +158,24 @@ var div = document.getElementById("canvas4").getContext("2d");
  */
 
 function drawSmileyFace() {
- var div = document. getElementById("canvas5").getContext("2d");
+ var canvas = document. getElementById("canvas5");
+ if(canvas.getContext){
+   var div = canvas.getContext('2d');
+
   let radius;
   radius =  Number(prompt("What do you want the radius to be?"));
   let eye =  radius * 0.1;//breaks code
   let smile = radius * 0.7;
   div.beginPath();
  div.arc(250, 250, radius, 0, 2 * Math.PI, true);//face
+ div.moveTo(100, 250);
+ div.arc(250, 250, smile, 0, Math.PI, false);//smile
 div.moveTo(150, 175);
 div.arc(150, 175, eye, 0, 2 * Math.PI, true);//left eye (not relative yet)
 div.moveTo(300, 175);
 div.arc(300, 175, eye, 0, 2 * Math.PI, true);//right eye
  div.stroke();
+}
 }
 /* div.moveTo(265, 265);
  div.arc(265, 265, smile, 0, Math.PI);
