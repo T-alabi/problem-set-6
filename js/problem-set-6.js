@@ -160,25 +160,23 @@ var div = document.getElementById("canvas4").getContext("2d");
 function drawSmileyFace() {
  var div = document. getElementById("canvas5").getContext("2d");
   let radius;
-      let smile = radius * 0.7
-  let eye =  radius * 0.1
-
- div.beginPath();
- //background
   radius =  Number(prompt("What do you want the radius to be?"));
- div.arc(250, 250, radius, 0, Math.PI * 2);
- div.moveTo(265, 265);
- //smile
- div.arc(265, 265, smile, 0, Math.PI);
- div.moveTo(175, 175);
- //left eye
- div.arc(175, 175, eye, 0, Math.PI * 2);
-div.moveTo(375, 175);
-//right eye
-div.arc(375, 175, eye, 0, Math.PI * 2);
+  let eye =  radius * 0.1;//breaks code
+  let smile = radius * 0.7;
+  div.beginPath();
+ div.arc(250, 250, radius, 0, 2 * Math.PI, true);//face
+div.moveTo(150, 175);
+div.arc(150, 175, eye, 0, 2 * Math.PI, true);//left eye (not relative yet)
+div.moveTo(300, 175);
+div.arc(300, 175, eye, 0, 2 * Math.PI, true);//right eye
  div.stroke();
 }
-
+/* div.moveTo(265, 265);
+ div.arc(265, 265, smile, 0, Math.PI);
+ div.moveTo(175, 175);
+ div.arc(175, 175, eye, 0, 2 * Math.PI);
+div.moveTo(375, 175);
+div.arc(375, 175, eye, 0, Math.PI * 2);*/
 /*
  * Star. 9 points.
  *
