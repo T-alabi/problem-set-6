@@ -168,13 +168,16 @@ function drawSmileyFace() {
   let smile = radius * 0.7;
   let pos = 250;
   let eyeposy = radius - (radius * 0.1);
+  let eyeposx = radius + ( radius * 0.01);
+  let smilepos = radius + (radius * 0.7);
+
   div.beginPath();
  div.arc(pos, pos, radius, 0, 2 * Math.PI, true);//face
  div.moveTo(390, 255);
  div.arc(255, 255, smile, 0, Math.PI, false);//smile
 div.moveTo(170, 175);
-div.arc(150, eyeposy, eye, 0, 2 * Math.PI, true);//left eye (not relative yet)
-div.moveTo(320, eyeposy);
+div.arc(150, 175, eye, 0, 2 * Math.PI, true);//left eye (not relative yet)
+div.moveTo(300, 175);
 div.arc(300, 175, eye, 0, 2 * Math.PI, true);//right eye
  div.stroke();//needed
 }
