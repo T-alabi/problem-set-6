@@ -224,6 +224,14 @@ let outradius = Number(prompt("what should the outer radius be?"));//outer radiu
 let inradius  = Number(prompt("what should the inner radius be?"));//inner radius
 if (isNan(outradius) || isNaN(inradius)){
   alert("one of your imputs is not a number");
+}else if(outradius < 2){
+  alert("your outer radius is too small");
+}else if (inradius < 1){
+  alert("your inner radius is too small");
+}else if (outradius <= inradius){
+  alert("your outer radius must be larger than you inner radius");
+}else{
+  div.beginPath();
 }
 }
 
