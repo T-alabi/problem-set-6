@@ -134,9 +134,12 @@ else {
 
 function drawTriangle() {
 
-var div = document.getElementById("canvas4").getContext("2d");
+  var div = document.getElementsByClassName('canvas4').getContext("2d");
+div.clearRect(0, 0, div.width, div.height);
+ let s1 = Number(prompt("how long should side 1 be?"));
+ let s2 = Number(prompt("how long should side 2 be?"));
+ let s3 = Number(prompt("how long should side 3 be?"));
 
-}
 
 /*
  * Smile. 7 points.
