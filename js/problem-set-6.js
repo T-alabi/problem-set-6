@@ -218,7 +218,13 @@ function drawSmileyFace(){
  */
 
 function drawStar() {
+  var div = document. getElementById("canvas6").getContext("2d");
 
+let outradius = Number(prompt("what should the outer radius be?"));//outer radius
+let inradius  = Number(prompt("what should the inner radius be?"));//inner radius
+if (isNan(outradius) || isNaN(inradius)){
+  alert("one of your imputs is not a number");
+}
 }
 
 /*
