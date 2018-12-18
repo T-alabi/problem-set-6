@@ -134,13 +134,26 @@ else {
 
 function drawTriangle() {
 
-  var div = document.getElementsByClassName('canvas4').getContext("2d");
+  var div = document.getElementById('canvas4').getContext("2d");
 div.clearRect(0, 0, div.width, div.height);
  let s1 = Number(prompt("how long should side 1 be?"));
  let s2 = Number(prompt("how long should side 2 be?"));
  let s3 = Number(prompt("how long should side 3 be?"));
-
-
+if (isNaN(s1) || isNaN(s2) || isNaN(s3)) {
+  alert("one of your imputs isnt a number.");
+} else if ((s1 * s1) + (s2 * s2) != (s3*s3)){//pythagrean therom
+  alert("this isnt a valid triangle.");
+}else if (s1 > div.width || s2 > div.width){
+  alert("this triangle will not fit on the canvas.");
+}else {
+  div.beginPath();
+  div.moveTo(10, 10);
+  div.lineTo(10, 10+s1);
+  div.lineTo(10+s2, 10+s1);
+  div.closePath();
+  div.stroke();
+}
+}
 /*
  * Smile. 7 points.
  *
