@@ -158,12 +158,12 @@ var div = document.getElementById("canvas4").getContext("2d");
  */
 
 function drawSmileyFace(){
-  var canvas = document.getElementsByClassName("canvas5");
-  var div = canvas.getContext("2d");
+  var div = document. getElementById("canvas5").getContext("2d");
+
 
   let radius = Number(prompt("what do you want the radius to be?"));
-  div.clearRect(0, 0, canvas.width, canvas.height);
-  if((radius * 2) + 10 > canvas.width || (radius * 2) + 10 > canvas.height){
+  div.clearRect(0, 0, div.width, div.height);
+  if((radius * 2) + 10 > div.width || (radius * 2) + 10 > div.height){
     alert("the smiley face wont fit on canvas");
   }
    if (radius < 1){
@@ -171,38 +171,17 @@ function drawSmileyFace(){
    }
    else{
      div.beginPath();
-     div.arc(radius+10, radius+10, radius, 0, 2*Math.PI);
-     div.moveTo((radius*.3)+10+(.1*radius), (radius*.6)+10);
-     div.arc(radius*.3+10, radius*.6+10, radius*.1, 0, 2*Math.PI);
+     div.arc(radius+10, radius+10, radius, 0, 2 * Math.PI);
+     div.moveTo((radius*.3)+10+(.1*radius), (radius *.6)+30);
+     div.arc(radius*.3+10, radius*.6+30, radius*.1, 0, 2*Math.PI);//left eye
      div.moveTo((radius*1.6)+10+(.1*radius), (radius*.6)+30);
-     div.arc(radius*1.6+10, radius*.6+30, radius*.1, 0, 2*Math.PI);
+     div.arc(radius*1.6+10, radius*.6 + 30, radius*.1, 0, 2*Math.PI);//right eye
      div.moveTo(radius+10+radius*.7, radius+20);
      div.arc(radius+10, radius+20, radius*.7, 0, 1*Math.PI);
      div.stroke();
    }
  }
 
-  /*
-  const canvas = document.getElementById("canvas5");
-  const context = canvas.getContext("2d");
-  let radius = Number(prompt("Radius:"));
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  if(radius*2+10 > canvas.width || radius*2+10 > canvas.height){
-    alert("The smiley face will not fit on the canvas.");
-  }
-  else{
-    context.beginPath();
-    context.arc(radius+10, radius+10, radius, 0, 2*Math.PI);
-    context.moveTo((radius*.3)+10+(.1*radius), (radius*.6)+10);
-    context.arc(radius*.3+10, radius*.6+10, radius*.1, 0, 2*Math.PI);
-    context.moveTo((radius*1.6)+10+(.1*radius), (radius*.6)+30);
-    context.arc(radius*1.6+10, radius*.6+30, radius*.1, 0, 2*Math.PI);
-    context.moveTo(radius+10+radius*.7, radius+20);
-    context.arc(radius+10, radius+20, radius*.7, 0, 1*Math.PI);
-    context.stroke();
-  }
-}
-*/
 
 /*
  * Star. 9 points.
