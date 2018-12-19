@@ -307,8 +307,33 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
+  const canvas = document.getElementById('canvas8');
+  const div = canvas.getContext('2d');
+  div.clearRect(0,0,canvas.width,canvas.height);
+  let length=Number(prompt("how long should each both be?"));
+  if(isNaN(length)==true){
+    alert("Your input is not a number.");
+  }else if(length>100){
+    alert("The pyramid will not fit on the canvas.");
+  }else{
+    div.beginPath();
+    let x=10;
+    let prevx=10;
+    let y=canvas.height-10-length;
+    for(let b = 0; b<5; b++){
+    for(let a = 0; a<5-b; a++){
+      div.moveTo(x,y);
+      div.rect(x,y,length,length);
+      x+=length;
+    }
+    y-=length
+    prevx+=length/2;
+    x=prevx;
+    }
+    div.lineWidth=1;
+    div.stroke();
 }
-
+}
 /*
  * House. 7 points.
  *
