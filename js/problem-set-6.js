@@ -218,23 +218,39 @@ function drawSmileyFace(){
  */
 
 function drawStar() {
+  let outradius = Number(prompt("what should the outer radius be?"));//outer radius
+  let inradius  = Number(prompt("what should the inner radius be?"));//inner radius
   var div = document. getElementById("canvas6").getContext("2d");
+   div.clearRect(0, 0, div.width, div.height);
 
-let outradius = Number(prompt("what should the outer radius be?"));//outer radius
-let inradius  = Number(prompt("what should the inner radius be?"));//inner radius
-if (isNan(outradius) || isNaN(inradius)){
-  alert("one of your imputs is not a number");
-}else if(outradius < 2){
-  alert("your outer radius is too small");
-}else if (inradius < 1){
-  alert("your inner radius is too small");
-}else if (outradius <= inradius){
-  alert("your outer radius must be larger than you inner radius");
-}else{
-  div.beginPath();
+   if (isNaN(outradius) || isNaN(inradius)){
+     alert("one of your imputs is not a number");
+   }else if(outradius < 2){
+     alert("your outer radius is too small");
+   }else if (inradius < 1){
+     alert("your inner radius is too small");
+   }else if (outradius <= inradius){
+     alert("your outer radius must be larger than you inner radius");
+   }else{
+     div.beginPath();
+    div.moveTo(125, 125 - outradius);
+   let x = 0;
+    let angle = 0 * Math.PI;
+    while (x < 5) {
+      div.lineTo(Math.cos(1.3 * Math.PI - angle) * inradius + 125, Math.sin(1.3 * Math.PI - angle) * inradius + 125);
+      div.lineTo(Math.cos(1.1 * Math.PI - angle) * outradius + 125, Math.sin(1.1 * Math.PI - angle) * outradius + 125);
+      angle = angle + 0.4 * Math.PI;
+      x = x + 1;
+     }
+     div.closePath();
+     div.stroke();
+     lineWidth = 1;
+   }
 }
-}
+/*
 
+
+*/
 /*
  * Stop Sign. 7 points.
  *
