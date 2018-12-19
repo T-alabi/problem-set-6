@@ -247,10 +247,7 @@ function drawStar() {
      lineWidth = 1;
    }
 }
-/*
 
-
-*/
 /*
  * Stop Sign. 7 points.
  *
@@ -267,8 +264,29 @@ function drawStar() {
  */
 
 function drawStopSign() {
+  var div = document.getElementById('canvas7').getContext('2d');
 
-}
+    div.fillStyle = "red";
+    div.beginPath();
+    div.moveTo(66, 10);
+    div.lineTo(146, 10);
+    div.lineTo(202, 66);
+    div.lineTo(202, 146);
+    div.lineTo(146, 202);
+    div.lineTo(66, 202);
+    div.lineTo(10, 146);
+    div.lineTo(10, 66);
+    div.stroke();
+    div.closePath();
+
+    div.fill();
+    div.lineWidth = 0;
+    div.font = "60px Arial";
+    div.fillStyle = "white";
+    div.fillText("STOP", 30, 130);
+
+  }
+
 
 /*
  * Pyramid. 7 points.
