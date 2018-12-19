@@ -364,4 +364,55 @@ function drawPyramid() {
  */
 
 function drawHouse() {
+  const canvas = document.getElementById('canvas9');
+ const div = canvas.getContext('2d');
+
+ div.clearRect(0, 0, div.width, div.height);
+
+   let hColor;
+   let dColor;
+   let length = 700;
+   let height = 500;
+   let x = 150;
+   let y = canvas.height - height - 10;
+
+   while (true){
+     hColor = prompt("House Color: ");
+     dColor = prompt("Door Color: ");
+     if ((hColor == "black" || hColor == "blue" || hColor == "green" || hColor == "purple" || hColor == "red" || hColor == "yellow" || hColor == "orange")
+     && (dColor == "black" || dColor == "blue" || dColor == "green" || dColor == "purple" || dColor == "red" || dColor == "yellow" || dColor == "orange")){
+         break;
+     } else {
+       alert("The Color is Not Supported");
+     }
+   }
+
+   div.beginPath();
+   div.fillStyle = hColor;
+   div.fillRect(x, y, length, height);
+
+   div.fillStyle = dColor;
+   div.fillRect(x + (length / 2) - 30, y + 400, 85, 200);
+   div.strokeRect(x + (length / 2)- 30, y + 400, 85, 200);
+   div.stroke();
+
+   div.fillStyle = "gray";
+   div.moveTo(x, y);
+   div.lineTo(x + 350, 50);
+   div.lineTo(x + length, y);
+   div.lineTo(x, y);
+   div.fill();
+
+   div.fillStyle = "lightblue";
+   div.fillRect(665, y + 150, 75, 75);
+   div.fillRect(275, y + 150, 75, 75);
+   div.fillRect(665, y + 350, 75, 75);
+   div.fillRect(275, y + 350, 75, 75);
+   div.closePath();
+
+   div.beginPath();
+   div.fillStyle = "yellow";
+   div.arc(545, 700, 6, 0, Math.PI*2);
+   div.fill();
+   div.closePath();
 }
